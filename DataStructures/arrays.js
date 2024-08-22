@@ -90,7 +90,6 @@ class MyArray {
 
     shiftItems(index) {
         for (let i = index; i < this.lenght - 1; i++) {
-
             this.data[i] = data[i + 1];
         }
 
@@ -106,5 +105,5 @@ newArr.push(10);
 console.log(newArr);
 newArr.pop();
 console.log(newArr);
-newArr.delete(3);
+newArr.delete(2);
 console.log(newArr);
