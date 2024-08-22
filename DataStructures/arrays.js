@@ -47,7 +47,7 @@ class Tank extends Player {
         super(name, type)
     }
 
-    play(){
+    play() {
         console.log(`WEEEEEEEE I am a ${this.type}`);
     }
 };
@@ -56,3 +56,55 @@ const tank1 = new Tank('Oni', 'Attacker');
 const tank2 = new Tank('Toranaga', 'Defender');
 
 
+//Implementing array
+class MyArray {
+
+    constructor() {
+        this.lenght = 0;
+        this.data = {};
+    }
+
+    get(index) {
+        return this.data[index];
+    }
+
+    push(item) {
+        this.data[this.lenght] = item;
+        this.lenght++;
+
+        return this.lenght;
+    }
+
+    pop() {
+        const lastItem = this.data[this.lenght - 1];
+        delete this.data[this.lenght - 1];
+        this.lenght--;
+
+        return lastItem;
+    }
+
+    delete(index) {
+        const item = this.data[index];
+        this.shiftItems(index);
+    }
+
+    shiftItems(index) {
+        for (let i = index; i < this.lenght - 1; i++) {
+
+            this.data[i] = data[i + 1];
+        }
+
+        delete this.data[this.lenght - 1];
+        this.lenght--;
+    }
+}
+
+const newArr = new MyArray();
+console.log(newArr.get(0));
+newArr.push(5);
+newArr.push(10);
+console.log(newArr);
+newArr.pop();
+console.log(newArr);
+newArr.delete(3);
+console.log(newArr);
