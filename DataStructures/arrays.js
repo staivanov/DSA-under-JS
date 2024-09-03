@@ -26,7 +26,6 @@ var object1 = { value: 10 };
 var object2 = object1;
 var object3 = { value: 10 };
 
-
 //instantiation
 class Player {
 
@@ -54,7 +53,6 @@ class Tank extends Player {
 
 const tank1 = new Tank('Oni', 'Attacker');
 const tank2 = new Tank('Toranaga', 'Defender');
-
 
 //Implementing array
 class MyArray {
