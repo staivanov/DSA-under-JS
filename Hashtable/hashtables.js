@@ -72,7 +72,7 @@ class HashTable {
     }
 }
 
-const myTashtable = new (20);
+const myTashtable = new HashTable(20);
 myTashtable.set('apples', 500);
 myTashtable.set('apples');
 myTashtable.set('grapes');

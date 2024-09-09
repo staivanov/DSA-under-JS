@@ -1,3 +1,5 @@
+import { LinkedList } from './linkedList.js';
+
 const basket = ['apples', 'grapes', 'pears'];
 
 let obj1 = { a: true };
