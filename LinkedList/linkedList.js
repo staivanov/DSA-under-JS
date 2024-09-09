@@ -7,7 +7,7 @@ export class LinkedList {
             value: value,
             next: null
         }
-        
+
         this.tail = this.head;
         this.length = 1;
     }
@@ -29,6 +29,52 @@ export class LinkedList {
         this.length++;
 
         return this;
+    }
+
+
+    printList() {
+        const array = [];
+
+        let currentNode = this.head;
+
+        while (currentNode !== null) {
+            array.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+
+        return array;
+    }
+
+
+    insert(index, value) {
+        //check params
+        if (index >= this.length) {
+            return this.append(value);
+        }
+
+        const newNode = new Node(value);
+        const leader = this.traversToIndex(index - 1);
+        const holdingPointer = leader.next;
+        leader.next = newNode;
+        newNode.next = holdingPointer;
+        this.length++;
+
+        return this.printList();
+    }
+
+
+ 
+
+    traversToIndex(index) {
+        let counter = 0;
+        let currentNode = this.head;
+
+        while (counter !== index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+
+        return currentNode;
     }
 }
 
