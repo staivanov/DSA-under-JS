@@ -2,7 +2,6 @@ import { Node } from './node.js';
 
 export class Stack {
     constructor() {
-        let newNode = new Node();
         this.top = null;
         this.bottom = null;
         this.length = 0;
