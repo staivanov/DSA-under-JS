@@ -1,3 +1,5 @@
+import { Node } from './node.js';
+
 export class LinkedList {
 
     constructor(value) {
@@ -5,36 +7,29 @@ export class LinkedList {
             value: value,
             next: null
         }
+        
         this.tail = this.head;
         this.length = 1;
     }
 
     append(value) {
-        const newNode = {
-            value: value,
-            next: null
-        };
+        let newNode = new Node(value);
 
-        this.tail.next = new Node();
-        this.tail = new Node();
+        this.tail.next = newNode;
+        this.tail = newNode;
         this.length++;
 
         return this;
     }
 
-    prepend(value){
-        const newNode = {
-            value: value,
-            next: this.head
-        };
-
+    prepend(value) {
+        let newNode = new Node(value);
         newNode.next = this.head;
         this.head = newNode;
         this.length++;
-        
+
         return this;
     }
-
 }
 
 
