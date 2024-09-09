@@ -63,7 +63,16 @@ export class LinkedList {
     }
 
 
- 
+    remove(index) {
+        const leader = this.traversToIndex(index - 1);
+        const unwantedNode = leader.next;
+        leader.next = unwantedNode.next;
+        this.length--;
+
+        return this.printList();
+    }
+
+
 
     traversToIndex(index) {
         let counter = 0;
